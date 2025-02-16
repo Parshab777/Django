@@ -32,6 +32,12 @@ python manage.py makemigrations
 <!-- create db table -->
 python manage.py migrate
 
+
+<!-- For interactive console -->
+python manage.py shell 
+{For this we should be in the project directory.}
+
+
 <!-- Create Data -->
 Model_name.objects.create(field = "", field2 = ""...)
 

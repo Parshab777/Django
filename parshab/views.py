@@ -1,5 +1,5 @@
 from django.shortcuts import render , HttpResponse
-
+from .models import *
 # Create your views here.
 def homee(request):
     return render(request,'home.html')
@@ -32,3 +32,15 @@ def contact(request):
         'Persons': person
     }
     return render(request,'contact.html',context)
+
+
+def task(request):
+    task = Todolist.objects.all()
+    context = {
+        'tasks': task
+    }
+    return render(request,'task.html',context)
+
+
+def form(request):
+    return render(request,'form.html')
