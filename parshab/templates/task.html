@@ -46,7 +46,7 @@
         <th scope="col">SN</th>
         <th scope="col"> title</th>
         <th scope="col"> description </th>
-        <th scope="col">Stats</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -56,6 +56,7 @@
         <td>{{ task.title }}</td>
         <td>{{ task.description }}</td>
         <td>{{ task.is_completed }}</td>
+        <td><button type="button" class="btn-close" aria-label="Close">Mark</button></td>
       </tr>
       {% endfor %}
     </tbody>

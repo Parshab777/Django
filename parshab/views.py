@@ -43,4 +43,7 @@ def task(request):
 
 
 def form(request):
-    return render(request,'form.html')
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        descriptions = request.POST.get('descriptions')
+        task = Todolist(title=title,descriptions=descriptions)

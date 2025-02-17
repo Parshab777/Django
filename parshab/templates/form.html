@@ -3,15 +3,16 @@
 {% block title %}Form{% endblock title %}
 
 {% block body %}
-<form action="/submit" method="post">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Introduction</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Descritptions</label>
+  {% csrf_token %}
+    <form action="form/" method="POST">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Title</label>
+        <input type="text" class="form-control" name="title" aria-describedby="emailHelp">
       </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+      <div class="form-floating">
+        <textarea class="form-control" id="floatingTextarea2" name="descritption"></textarea>
+        <label for="floatingTextarea2">Descritption</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 {% endblock body %}
