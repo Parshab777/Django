@@ -47,6 +47,7 @@
         <th scope="col"> title</th>
         <th scope="col"> description </th>
         <th scope="col">Status</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -55,8 +56,22 @@
         <th scope="row">{{forloop.counter}}</th>
         <td>{{ task.title }}</td>
         <td>{{ task.description }}</td>
-        <td>{{ task.is_completed }}</td>
-        <td><button type="button" class="btn-close" aria-label="Close">Mark</button></td>
+        <td>
+        {% if task.is_completed %}
+        <span class = text-success>
+          Completed
+          </span>
+        {% else %}
+        <span class = "text-danger">
+          Pending
+        </span>
+        {% endif %}
+        </td>
+        <td> 
+          <a href ="{{task.pk}}" class="btn btn-success" >Mark</a>
+          <a href ="{{task.pk}}/edit" class="btn btn-primary" > Edit </a>
+          <a href ="{{task.pk}}/delete" class="btn btn-success" > Delete </a>
+        </td>
       </tr>
       {% endfor %}
     </tbody>

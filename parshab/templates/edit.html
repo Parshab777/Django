@@ -14,12 +14,12 @@
     {% csrf_token %}  <!-- Moved inside the form -->
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Title</label>
-        <input type="text" class="form-control" name="title" aria-describedby="emailHelp">
+        <input type="text" class="form-control" value = {{tasks.title}} name="title" aria-describedby="emailHelp">
       </div>  <!-- here the name acts as the key -->
 
       <div class="form-floating mb-3">
-        <textarea class="form-control" id="floatingTextarea" name="description"></textarea>
-        <label for="floatingTextarea">Description</label>
+        <textarea class="form-control" id="floatingTextarea" name="description">{{tasks.description}}</textarea>
+      <label for="floatingTextarea">Description</label>
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
